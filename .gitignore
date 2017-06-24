@@ -46,9 +46,3 @@ gradle-app.setting
 .idea/modules/sample.iml
 .idea/vcs.xml
 .idea/workspace.xml
-build.gradle
-gradle/
-gradlew
-gradlew.bat
-settings.gradle
-src/
