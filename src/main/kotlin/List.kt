@@ -20,6 +20,7 @@ object MyList {
         require(foldRight(strings, "", { x, y -> x + y }) == "EDCBA")
         require(foldLeft(ints, 0, { x, y -> x + y }) == 15)
         require(foldLeft(strings, "", { x, y -> x + y }) == "ABCDE")
+        require(reverse(ints) == Cons(5, Cons(4, Cons(3, Cons(2, Cons(1, Nil))))))
     }
 
     fun sum(ints: List<Int>): Int = when (ints) {
@@ -69,5 +70,7 @@ object MyList {
         is Nil -> z
         is Cons -> foldLeft(list.tail, f(z, list.head), f)
     }
+
+    fun <A> reverse(list: List<A>): List<A> = foldLeft(list, Nil as List<A>, { x, y -> Cons(y, x) })
 
 }
